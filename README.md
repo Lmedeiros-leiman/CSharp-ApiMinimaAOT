@@ -1,3 +1,16 @@
+# WIP.
+The current template is a Work In Progress. To add AOT support the project needs some heavy weight lifting.
+
+First, each Endpoint needs to add its own classes to the partial jsonserializable class, telling the compiler at runtime the classes it SHOULD be abble to work into json.
+
+Second, EF is not >fully< compatible with AOT, dynamic requests are still made using reflective "Magic".
+the solution is to either fully scrap EF and use [Dapper](https://github.com/DapperLib/Dapper)
+OR to rework EF current models and declare to the compiler how it should compile the queries used dynamically on each Endpoint.
+not forgetting to use the dotnet-ef tool to generate the compiled EF entities, preferably during build time as an automatic job.
+
+Bellow is the original Template Documentation
+---
+
 # Structured Minimal API
 An example on how to structure a minmal API using [Vertical Slice Architecture](https://www.jimmybogard.com/vertical-slice-architecture/)
 
