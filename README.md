@@ -8,6 +8,8 @@ the solution is to either fully scrap EF and use [Dapper](https://github.com/Dap
 OR to rework EF current models and declare to the compiler how it should compile the queries used dynamically on each Endpoint.
 not forgetting to use the dotnet-ef tool to generate the compiled EF entities, preferably during build time as an automatic job.
 
+Day 1 - Tried to update to .net 10, but Linux support only extends for .net 9
+
 Bellow is the original Template Documentation
 ---
 
